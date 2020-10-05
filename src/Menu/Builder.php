@@ -186,7 +186,7 @@ class Builder
                 return $item;
             }
 
-            $item = $filter->transform($item);
+            $item = $filter->transform($item, new Builder());
         }
 
         // If the item is a submenu, transform all submenu items too.
