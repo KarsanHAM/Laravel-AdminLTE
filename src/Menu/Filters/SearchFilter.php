@@ -3,6 +3,7 @@
 namespace JeroenNoten\LaravelAdminLte\Menu\Filters;
 
 use JeroenNoten\LaravelAdminLte\Helpers\MenuItemHelper;
+use JeroenNoten\LaravelAdminLte\Menu\Builder;
 
 class SearchFilter implements FilterInterface
 {
@@ -12,7 +13,7 @@ class SearchFilter implements FilterInterface
      * @param array $item A menu item
      * @return array The transformed menu item
      */
-    public function transform($item)
+    public function transform($item, Builder $builder)
     {
         if (! MenuItemHelper::isSearchBar($item)) {
             return $item;

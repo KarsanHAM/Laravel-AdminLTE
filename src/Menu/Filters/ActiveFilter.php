@@ -4,6 +4,7 @@ namespace JeroenNoten\LaravelAdminLte\Menu\Filters;
 
 use JeroenNoten\LaravelAdminLte\Helpers\MenuItemHelper;
 use JeroenNoten\LaravelAdminLte\Menu\ActiveChecker;
+use JeroenNoten\LaravelAdminLte\Menu\Builder;
 
 class ActiveFilter implements FilterInterface
 {
@@ -30,7 +31,7 @@ class ActiveFilter implements FilterInterface
      * @param array $item A menu item
      * @return array The transformed menu item
      */
-    public function transform($item)
+    public function transform($item, Builder $builder)
     {
         if (! MenuItemHelper::isHeader($item)) {
             $item['active'] = $this->activeChecker->isActive($item);

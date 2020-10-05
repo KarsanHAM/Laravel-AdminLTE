@@ -3,6 +3,7 @@
 namespace JeroenNoten\LaravelAdminLte\Menu\Filters;
 
 use Illuminate\Translation\Translator;
+use JeroenNoten\LaravelAdminLte\Menu\Builder;
 
 class LangFilter implements FilterInterface
 {
@@ -37,7 +38,7 @@ class LangFilter implements FilterInterface
      * @param array $item A menu item
      * @return array The transformed menu item
      */
-    public function transform($item)
+    public function transform($item, Builder $builder)
     {
         // Translate the menu item properties.
 
